@@ -25,7 +25,7 @@ SECRET_KEY = '@xpsas68rny%)e+a#fupv^l&mh)v!n*jyt@)!%euyi6b58(^xs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["18.183.227.181"]
 
 
 # Application definition
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'rest_framework',
     'rest_framework.authtoken',
     
@@ -56,10 +55,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
+    'http://release-max-management-service.s3-website-ap-northeast-1.amazonaws.com',
 ]
+"""
+CORS_ORIGIN_WHITELIST = [
+        'http://localhost:3000',
+]
+"""
 
 REST_FRAMEWORK = {}
 
@@ -91,8 +94,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'portfolio', #　作成したデータベース名
-        'USER': 'root', # ログインユーザー名
-        'HOST': '',
+        'USER': 'root', # ログインユーザー名,
+        'HOST': 'localhost',
+        'PASSWORD': 'Rikuto10',
         'PORT': '',
     }
 }
